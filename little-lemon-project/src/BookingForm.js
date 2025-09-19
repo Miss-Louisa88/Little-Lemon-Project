@@ -68,6 +68,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         type="submit"
         value="Make Your reservation"
         aria-label="On Click"
+        className="booking-submit"
       />
     </form>
   );

@@ -19,7 +19,8 @@
 
 .booking-form {
   background: var(--highlight-white);
-  color: var(--primary-green);
+  color: white;
+  background-color: var(--primary-green);
   max-width: 400px;
   margin: 0 auto;
   padding: 2rem;
@@ -57,5 +58,20 @@
 }
 
 .booking-form button:hover {
+  background-color: #fdd835;
+}
+.booking-form .booking-submit {
+  background-color: var(--primary-yellow);
+  color: black;
+  padding: 0.75rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.booking-form .booking-submit:hover {
   background-color: #fdd835;
 }

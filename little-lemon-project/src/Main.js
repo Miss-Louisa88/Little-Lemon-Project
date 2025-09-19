@@ -8,14 +8,24 @@ import ConfirmedBooking from "./ConfirmedBooking";
 // --- Step 1: Initialize times for today ---
 const initializeTimes = () => {
   const today = new Date();
-  return typeof fetchAPI === "function" ? fetchAPI(today) : [];
+  if (typeof fetchAPI === "function") {
+    return fetchAPI(today);
+  }
+  // fallback times
+  return ["17:00", "18:00", "19:00", "20:00", "21:00"];
 };
 
 // --- Step 2: Reducer to update times ---
 const updateTimes = (state, action) => {
-  return typeof fetchAPI === "function"
-    ? fetchAPI(new Date(action.date))
-    : state;
+  if (action.type === "update_times") {
+    if (typeof fetchAPI === "function") {
+      return fetchAPI(new Date(action.date));
+    } else {
+      // fallback times
+      return ["17:00", "18:00", "19:00", "20:00", "21:00"];
+    }
+  }
+  return state;
 };
 
 function Main() {
