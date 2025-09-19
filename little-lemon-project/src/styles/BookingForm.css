@@ -1,0 +1,61 @@
+.booking-section {
+  background-color: var(--primary-green);
+  color: var(--highlight-white);
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.booking-section h1 {
+  font-family: var(--font-title);
+  font-size: 40px;
+  margin-bottom: 0.5rem;
+}
+
+.booking-section p {
+  font-family: var(--font-body);
+  margin-bottom: 2rem;
+  font-size: 18px;
+}
+
+.booking-form {
+  background: var(--highlight-white);
+  color: var(--primary-green);
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+
+  display: grid;
+  gap: 1rem;
+}
+
+.booking-form label {
+  font-weight: bold;
+  text-align: left;
+}
+
+.booking-form input,
+.booking-form select {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  width: 100%;
+}
+
+.booking-form button {
+  background-color: var(--primary-yellow);
+  color: black;
+  padding: 0.75rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.booking-form button:hover {
+  background-color: #fdd835;
+}

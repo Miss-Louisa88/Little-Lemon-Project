@@ -1,0 +1,132 @@
+/* Specials component styles (use in src/styles/Specials.css) */
+
+:root {
+  --card-img-height: 180px; /* change to match Figma */
+  --card-radius: 12px;
+  --gap: 1.5rem;
+  --card-width-min: 260px;
+  --primary-yellow: #f4ce14;
+  --primary-green: #495e57;
+  --text-dark: #333333;
+}
+
+.specials {
+  padding: 2rem;
+  text-align: center;
+}
+
+.specials h2 {
+  font-family: var(--font-title);
+  font-size: 40px;
+  margin-bottom: 0.75rem;
+}
+
+/* Online Menu button (top-right-ish) */
+.menu-btn {
+  background-color: var(--primary-yellow);
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 1.25rem;
+}
+
+/* grid ensures equal card widths */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--card-width-min), 1fr));
+  gap: var(--gap);
+  justify-items: center;
+  align-items: start;
+  margin-top: 1rem;
+}
+
+/* card shell */
+.card {
+  width: 100%;
+  max-width: 320px;
+  background-color: #ffffff;
+  border-radius: var(--card-radius);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* image area — fixed height and cover to crop evenly */
+.card-img {
+  width: 100%;
+  height: var(--card-img-height);
+  object-fit: cover;
+  display: block;
+}
+
+/* card body grows to fill space so footer button sits at bottom */
+.card-content {
+  padding: 1rem;
+  flex: 1 1 auto;
+  text-align: left;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.card-content h3 {
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  margin: 0;
+  color: var(--text-dark);
+}
+
+.price {
+  font-weight: 700;
+  color: var(--primary-green);
+}
+
+/* description */
+.card-content p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}
+
+/* footer with CTA button */
+.card-footer {
+  padding: 0.75rem 1rem;
+  border-top: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: flex-end;
+  background: transparent;
+}
+
+.order-btn {
+  background: var(--primary-green);
+  color: white;
+  border: none;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* hover subtle lift */
+.card:hover {
+  transform: translateY(-4px);
+  transition: transform 180ms ease;
+}
+
+/* responsive adjustments */
+@media (max-width: 768px) {
+  :root {
+    --card-img-height: 150px;
+  }
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}

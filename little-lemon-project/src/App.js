@@ -1,10 +1,14 @@
+import { BrowserRouter as Router } from "react-router-dom";
+import Nav from "./Nav";
+import Main from "./Main"; // Import Main for routes
 import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Little Lemon Project by Louisa</h1>
-    </div>
+    <Router>
+      <Nav />
+      <Main /> {/* Routes are moved here */}
+    </Router>
   );
 }
 
